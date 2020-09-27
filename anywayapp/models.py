@@ -143,12 +143,12 @@ class Bg(models.Model):
 
 
 class CasualtiesCosts(models.Model):
-    id = models.IntegerField()
-    injured_type = models.CharField(max_length=-1)
-    injured_type_hebrew = models.CharField(max_length=-1)
+    cost_id = models.IntegerField()
+    injured_type = models.CharField(max_length=255)
+    injured_type_hebrew = models.CharField(max_length=255)
     injuries_cost_k = models.IntegerField()
     year = models.IntegerField()
-    data_source_hebrew = models.CharField(max_length=-1)
+    data_source_hebrew = models.CharField(max_length=255)
 
     class Meta:
         managed = False
@@ -456,9 +456,9 @@ class Edges(models.Model):
 
 class EmbeddedReports(models.Model):
     id = models.IntegerField(primary_key=True)
-    report_name_english = models.CharField(max_length=-1)
-    report_name_hebrew = models.CharField(max_length=-1, blank=True, null=True)
-    url = models.CharField(max_length=-1, blank=True, null=True)
+    report_name_english = models.CharField(max_length=255)
+    report_name_hebrew = models.CharField(max_length=255, blank=True, null=True)
+    url = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -1295,7 +1295,7 @@ class ReportProblem(models.Model):
     phone_number = models.CharField(max_length=50, blank=True, null=True)
     email = models.CharField(max_length=100, blank=True, null=True)
     send_to_municipality = models.BooleanField(blank=True, null=True)
-    image_data = models.CharField(max_length=-1, blank=True, null=True)
+    image_data = models.CharField(max_length=255, blank=True, null=True)
     personal_id = models.CharField(max_length=20, blank=True, null=True)
 
     class Meta:
