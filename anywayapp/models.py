@@ -122,7 +122,7 @@ class AgeGroup(models.Model):
 
 
 class Bg(models.Model):
-    gid = models.AutoField(primary_key=True)
+    gid = models.IntegerField()
     statefp = models.CharField(max_length=2, blank=True, null=True)
     countyfp = models.CharField(max_length=3, blank=True, null=True)
     tractce = models.CharField(max_length=6, blank=True, null=True)
@@ -204,7 +204,7 @@ class ColumnsDescription(models.Model):
 
 
 class County(models.Model):
-    gid = models.AutoField(unique=True, primary_key=True)
+    gid = models.IntegerField(unique=True)
     statefp = models.CharField(max_length=2, blank=True, null=True)
     countyfp = models.CharField(max_length=3, blank=True, null=True)
     countyns = models.CharField(max_length=8, blank=True, null=True)
@@ -256,7 +256,7 @@ class CountysubLookup(models.Model):
 
 
 class Cousub(models.Model):
-    gid = models.AutoField(unique=True, primary_key=True)
+    gid = models.IntegerField(unique=True)
     statefp = models.CharField(max_length=2, blank=True, null=True)
     countyfp = models.CharField(max_length=3, blank=True, null=True)
     cousubfp = models.CharField(max_length=5, blank=True, null=True)
@@ -1183,7 +1183,7 @@ class PagcRules(models.Model):
 
 
 class Place(models.Model):
-    gid = models.AutoField(unique=True, primary_key=True)
+    gid = models.IntegerField(unique=True)
     statefp = models.CharField(max_length=2, blank=True, null=True)
     placefp = models.CharField(max_length=5, blank=True, null=True)
     placens = models.CharField(max_length=8, blank=True, null=True)
@@ -1559,7 +1559,7 @@ class SpeedLimit(models.Model):
 
 
 class State(models.Model):
-    gid = models.AutoField(unique=True, primary_key=True)
+    gid = models.IntegerField(unique=True)
     region = models.CharField(max_length=2, blank=True, null=True)
     division = models.CharField(max_length=2, blank=True, null=True)
     statefp = models.CharField(primary_key=True, max_length=2)
@@ -1602,7 +1602,7 @@ class StreetTypeLookup(models.Model):
 
 
 class Tabblock(models.Model):
-    gid = models.AutoField(primary_key=True)
+    gid = models.IntegerField()
     statefp = models.CharField(max_length=2, blank=True, null=True)
     countyfp = models.CharField(max_length=3, blank=True, null=True)
     tractce = models.CharField(max_length=6, blank=True, null=True)
@@ -1646,7 +1646,7 @@ class TotalWeight(models.Model):
 
 
 class Tract(models.Model):
-    gid = models.AutoField(primary_key=True)
+    gid = models.IntegerField()
     statefp = models.CharField(max_length=2, blank=True, null=True)
     countyfp = models.CharField(max_length=3, blank=True, null=True)
     tractce = models.CharField(max_length=6, blank=True, null=True)
@@ -1842,7 +1842,7 @@ class YishuvShape(models.Model):
 
 
 class Zcta5(models.Model):
-    gid = models.AutoField(unique=True, primary_key=True)
+    gid = models.IntegerField(unique=True)
     statefp = models.CharField(max_length=2)
     zcta5ce = models.CharField(primary_key=True, max_length=5)
     classfp = models.CharField(max_length=2, blank=True, null=True)
