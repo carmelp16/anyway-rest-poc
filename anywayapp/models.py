@@ -168,7 +168,7 @@ class Cities(models.Model):
 
 
 class CitiesVehiclesRegistered(models.Model):
-    id = models.IntegerField(blank=True, null=True)
+    registered_id = models.IntegerField(blank=True, null=True)
     city_id = models.IntegerField(blank=True, null=True)
     year = models.IntegerField(blank=True, null=True)
     name = models.CharField(max_length=100, blank=True, null=True)
@@ -376,7 +376,7 @@ class DirectionLookup(models.Model):
 
 
 class Discussions(models.Model):
-    id = models.BigIntegerField(blank=True, null=True)
+    discussion_id = models.BigIntegerField(blank=True, null=True)
     type = models.IntegerField(blank=True, null=True)
     title = models.CharField(max_length=100, blank=True, null=True)
     created = models.DateTimeField(blank=True, null=True)
@@ -619,7 +619,7 @@ class GeocodeSettingsDefault(models.Model):
 
 
 class HighlightMarkers(models.Model):
-    id = models.IntegerField(blank=True, null=True)
+    highlight_id = models.IntegerField(blank=True, null=True)
     latitude = models.FloatField(blank=True, null=True)
     longitude = models.FloatField(blank=True, null=True)
     created = models.DateTimeField(blank=True, null=True)
